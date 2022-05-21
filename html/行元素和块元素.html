@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>行元素和块元素</title>
+    <style>
+      .hangnei {
+        background-color: palegreen;
+        padding: 20px;
+        margin: 20px;
+        width: 300px;
+      }
+      /* 1.行内元素margin只在左右起作用，padding可以起作用，元素宽高不起作用，元素不设置宽由内容撑开了 
+      2.块元素可以设置宽高，独占一行元素不设置宽度的情况下，是它本身的父容器宽度的100%
+      */
+    </style>
+  </head>
+  <body>
+    <a href="https://www.bilibili.com">行元素点击跳转哔哩哔哩，备注a标签</a>
+    <b>b标签</b>
+    <em>em标签</em>
+    <i>i标签</i>
+    <img src="" alt="图像" />
+    <p>常用的行内元素有a、b、em、i、img、input、label、span、textare</p>
+    <p>常用的块元素div、p、ol、ul、dl、form、h1~h6、menu、table</p>
+
+    <div>
+      <b class="hangnei">我是一个行内元素</b>
+    </div>
+  </body>
+</html>

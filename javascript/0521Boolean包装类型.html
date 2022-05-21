@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolean包装类型</title>
+  </head>
+  <body>
+    <script>
+      let aa = new Boolean(false);
+      let res = aa && true;
+      console.log("%c" + res, "COLOR:#219EBC");
+
+      let bb = false;
+      let res1 = bb && true;
+      console.log(res1);
+
+      // 所有的对象在布尔表达式中都会自动转换程true
+      // 原始布尔值和boolean对象之前有区别，建议永远不要使用后者
+    </script>
+  </body>
+</html>

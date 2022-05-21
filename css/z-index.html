@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+      }
+      .box1 {
+        background-color: aqua;
+        top: 20px;
+        left: 20px;
+        /* z-index: 3; */
+      }
+      .box2 {
+        background-color: bisque;
+        top: 40px;
+        left: 40px;
+        z-index: 999;
+        /* opacity: 0.99; */
+      }
+      .box3 {
+        background-color: brown;
+        top: 20px;
+        left: 20px;
+        /* z-index: 999; */
+        /* position: relative; */
+        /* z-index: -1; */
+      }
+      .box4 {
+        background-color: cornflowerblue;
+        top: 80px;
+        left: 80px;
+        /* z-index: 3; */
+      }
+      /* 静态定位以外的元素会根据它们在代码树中的深度依次叠放，就像扑克一样，后来的牌总是叠放在先来的牌上面 */
+      /* 堆叠上下文：所有z-index不是auto值的定位元素都会出现在这个上下文排序中，出现层级堆叠。任何说定了position是absolute的元素以及z-index
+      不是auto的元素都会创建属于自己的堆叠上下文，自己的堆叠上下文中，是不会影响其他的堆叠上下文 */
+      /* 例如设定了opacity值小于1的元素就会创建自己的堆叠上下文 */
+    </style>
+  </head>
+  <body>
+    <div class="box1"><p>1</p></div>
+    <div class="box2">
+      <p>2</p>
+      <div class="box3"><p>3</p></div>
+    </div>
+    <div class="box4"><p>4</p></div>
+  </body>
+</html>

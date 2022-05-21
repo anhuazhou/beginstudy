@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>call apply bind</title>
+  </head>
+  <body></body>
+  <script>
+    //1.call、apply、bind都有两个参数，第一个参数是this（对象）
+    //2.call第二个参数传数组，apply第二个参数可以传数组，call和apply无需调用立即执行，bind需要调用之后执行
+    function fn1(x) {
+      console.log(x);
+      console.log(this.a + "------" + this.b);
+    }
+    let obj = {
+      a: "周袁锋",
+      b: "前端学习",
+    };
+    fn1.bind(obj);
+    let o = {};
+    o.fn1 = fn1.bind(obj, 666);
+    console.log(o.fn1); //bind不会立即执行，需要调用之后执行，且bind返回的是一个新的函数，bind可以接受参数
+    console.log(o.fn1 === fn1);
+    o.fn1();
+
+    let obj2 = { a: "xx123" };
+    function fn2() {
+      console.log(this.a);
+    }
+    fn2.call(obj2); //call和apply会立即执行
+    fn2.apply(obj2);
+  </script>
+</html>
