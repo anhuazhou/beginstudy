@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>迭代器</title>
+  </head>
+  <body>
+    <script>
+      //   let obj = {
+      //     0: 200,
+      //     1: 300,
+      //     2: 400,
+      //     length: 3,
+      //   };
+      //   obj[Symbol.iterator] = Array.prototype[Symbol.iterator];
+      //   for (let val of obj) {
+      //     console.log(val);
+      //   }
+
+      class Counter {
+        constructor(limit) {
+          this.limit = limit;
+        }
+        [Symbol.iterator]() {
+          let count = 1,
+            limit = this.limit;
+          return {
+            next() {
+              if (count <= limit) {
+                console.log("正常");
+                return {
+                  done: false,
+                  value: count++,
+                };
+              } else {
+                console.log("不正常");
+                return { done: true, value: undefined };
+              }
+            },
+            return() {
+              console.log("Exiting Early");
+              return {
+                done: true,
+              };
+            },
+          };
+        }
+      }
+      let count = new Counter(5);
+      console.log(count); //5
+      console.log(typeof count); //object
+      for (let i of count) {
+        if (i > 2) {
+          break;
+        }
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>
