@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for in和for of</title>
+  </head>
+  <body>
+    <script>
+      for (const key in window) {
+        // console.log(key);
+        // document.write(key + "</br>");
+      }
+      function forof() {
+        const aa = [2, 3, 4, 5];
+        const bb = { a: 2, b: 3, c: 4 };
+        for (const value of aa) {
+          console.log(`vlalue${value}`);
+        }
+        for (const value in aa) {
+          console.log(`indedx${value}`);
+        }
+
+        for (const value in bb) {
+          console.log(`bb${value}`);
+        }
+        for (const value of Object.keys(bb)) {
+          console.log(`${value}`);
+        }
+        aa.forEach((element) => {
+          console.log(element);
+        });
+      }
+      forof();
+    </script>
+  </body>
+</html>

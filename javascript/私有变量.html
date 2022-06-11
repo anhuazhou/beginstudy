@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>私有变量</title>
+  </head>
+  <body>
+    <script>
+      function MyObject() {
+        let privateVarible = 10;
+        function privateFuntion() {
+          return false;
+        }
+        this.publicMethod = function () {
+          return privateVarible++;
+          //   return privateFuntion();
+        };
+      }
+      let use = new MyObject();
+      console.log(use.publicMethod);
+    </script>
+  </body>
+</html>

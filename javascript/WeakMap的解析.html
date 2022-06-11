@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weakmap的解析</title>
+  </head>
+  <body>
+    <script>
+      //   const wm = new WeakMap();
+      //   we.set({}, "zhou"); //这里执行代码之后，没有指向这个对象的其他引用，所以js引擎就会回收这个目标
+
+      const wm = new WeakMap();
+      const container = { key: {} };
+      wm.set(container, "zhou");
+      function removeContainer() {
+        container.key = null;
+      }
+    </script>
+  </body>
+</html>

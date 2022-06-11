@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbol</title>
+  </head>
+  <body>
+    <script>
+      let aa = Symbol("foo");
+      let bb = Symbol("foo");
+      console.log(aa === bb); //false
+
+      let symboalone = Symbol.for("foo"); //创建新符号
+      let othersymbol = Symbol.for("foo"); //重用已有的符号；
+      console.log(Symbol.keyFor(symboalone));
+      console.log(symboalone === othersymbol); //true
+
+      let objsymbol = Symbol("bar");
+      let obj = Object(objsymbol);
+      console.log(typeof obj); //object
+    </script>
+  </body>
+</html>
